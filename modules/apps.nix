@@ -1,6 +1,7 @@
 { pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    git
+    fish
+    starship
   ];
 
   homebrew = {
@@ -18,7 +19,8 @@
     ];
 
     casks = [
-      # "google-chrome"
+      "neovide"
+      "obsidian"
     ];
   };
 }
