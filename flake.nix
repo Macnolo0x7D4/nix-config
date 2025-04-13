@@ -27,6 +27,11 @@
       inherit nixpkgs inputs;
     };
   in {
+    nixosConfigurations."vm" = mkSystem "vm-aarch64" {
+      system = "aarch64-linux";
+      user = "macnolo";
+    };
+    
     darwinConfigurations."Macnolo-Air" = mkSystem "macbook-air-m1" {
       system = "aarch64-darwin";
       user = "macnolo";

@@ -36,9 +36,21 @@ in {
   xdg.enable = true;
 
   home.packages = [
+    pkgs.neovim
     pkgs.elixir
+    pkgs.nodejs
   ] ++ (lib.optionals (isLinux && !isWSL) [
     pkgs.rofi
+    pkgs.dmenu
+    pkgs.kitty
+    pkgs.neovide
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.pkg-config
+    pkgs.autoconf
+    pkgs.automake
+    pkgs.libtool
+    pkgs.ripgrep
   ]);
 
   home.sessionVariables = {
