@@ -1,12 +1,18 @@
-{ hostname, username, ... }:
+{ networking, system, users, nix, ... }:
 
+username:
 {
-  networking.hostName = hostname;
-  networking.computerName = hostname;
-  system.defaults.smb.NetBIOSName = hostname;
+  darwin ? false
+}
 
+let
+{
+  home = if darwin then "/Users/${username}" else "/home/${username}";
+}
+in
+{
   users.users."${username}"= {
-    home = "/Users/${username}";
+    home = home;
     description = username;
   };
 

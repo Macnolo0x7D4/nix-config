@@ -1,9 +1,6 @@
-{ pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    fish
-    starship
-  ];
+{ inputs, pkgs, ... }:
 
+{
   homebrew = {
     enable = true;
 
@@ -22,5 +19,9 @@
       "neovide"
       "obsidian"
     ];
+  };
+
+  users.users.macnolo = {
+    home = "/Users/macnolo";
   };
 }
