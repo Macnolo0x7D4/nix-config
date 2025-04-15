@@ -66,9 +66,12 @@ in {
 
   programs.gpg.enable = !isDarwin;
 
+  programs.starship.enable = true;
+
   programs.fish = {
     enable = true;
     shellAliases = shellAliases;
+    interactiveShellInit = "starship init fish | source";
   };
 
   programs.git = {
