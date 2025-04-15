@@ -65,6 +65,10 @@ in {
     DISPLAY = "nixpkgs-390751";
   } else {}); 
 
+  xdg.configFile = {
+    "i3/config".text = builtins.readFile ./i3;
+  };
+
   programs.gpg.enable = !isDarwin;
 
   programs.starship.enable = true;
