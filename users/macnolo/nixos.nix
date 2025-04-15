@@ -5,7 +5,7 @@
 
   users.users.macnolo = {
     isNormalUser = true;
-    extraGroups = [ "docker", "wheel" ];
+    extraGroups = [ "docker" "wheel" ];
     packages = with pkgs; [
       tree
       git
