@@ -37,6 +37,8 @@ in systemFunc rec {
         isWSL = isWSL;
         inputs = inputs;
       };
+
+      home-manager.backupFileExtension = "backup";
     }
 
     {
