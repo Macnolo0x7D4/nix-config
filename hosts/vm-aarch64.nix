@@ -73,6 +73,8 @@
       "defaults"
     ];
   };
+
+  networking.firewall.enable = false;
   
   programs.zsh.shellInit = ''
     # Nix
