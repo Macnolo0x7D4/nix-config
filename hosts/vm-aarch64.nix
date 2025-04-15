@@ -5,6 +5,13 @@
       ./hardware/vm-aarch64.nix
     ];
 
+  nix = {
+    package = pkgs.nixVersions.latest;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   system.stateVersion = "24.11";
 
   boot.loader.systemd-boot.enable = true;
@@ -15,6 +22,10 @@
   time.timeZone = "America/Mexico_City";
 
   virtualisation.vmware.guest.enable = true;
+  virtualisation.vmware.guest.headless = false;
+
+  security.sudo.wheelNeedsPassword = false;
+  virtualisation.docker.enable = true;
 
   services = {
     displayManager.defaultSession = "none+i3";
@@ -24,7 +35,7 @@
 
       xkb.layout = "us";
 
-      dpi = 220;
+      dpi = 180;
 
       desktopManager = {
         xterm.enable = false;
@@ -37,6 +48,7 @@
           i3status
           i3lock
           i3blocks
+          xsel
         ];
       };
     };
@@ -46,7 +58,8 @@
     vim
     wget
     htop
-  ]; 
+    unzip
+  ];  
   
   programs.zsh.shellInit = ''
     # Nix
@@ -63,5 +76,11 @@
       source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
     end
     # End Nix
-    '';
+    ''; 
+
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "macnolo" ];
+  };
 }
