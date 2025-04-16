@@ -67,6 +67,7 @@ in {
 
   xdg.configFile = {
     "i3/config".text = builtins.readFile ./i3;
+    "rofi/config.rasi".text = builtins.readFile ./rofi;
   };
 
   programs.gpg.enable = !isDarwin;
@@ -104,7 +105,7 @@ in {
       "wireless _first_".enable = false;
       "battery all".enable = false;
     };
-  };
+  }; 
 
   xresources.properties = {
     "Xft.dpi" = 180;
