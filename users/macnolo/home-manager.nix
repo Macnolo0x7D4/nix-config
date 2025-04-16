@@ -42,6 +42,7 @@ in {
     pkgs.fastfetch
     pkgs.go
   ] ++ (lib.optionals (isLinux && !isWSL) [
+    pkgs.chromium
     pkgs.rofi
     pkgs.dmenu
     pkgs.kitty
