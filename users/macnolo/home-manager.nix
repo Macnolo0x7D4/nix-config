@@ -39,6 +39,7 @@ in {
     pkgs.neovim
     pkgs.elixir
     pkgs.nodejs
+    pkgs.fastfetch
     pkgs.go
   ] ++ (lib.optionals (isLinux && !isWSL) [
     pkgs.rofi
