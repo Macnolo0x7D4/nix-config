@@ -6,6 +6,7 @@
   users.users.macnolo = {
     isNormalUser = true;
     extraGroups = [ "docker" "wheel" ];
+    shell = pkgs.fish;
     packages = with pkgs; [
       tree
       git
