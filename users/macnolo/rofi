@@ -1,6 +1,4 @@
-@theme "/usr/share/rofi/themes/purple.rasi"
-
 configuration {
-    dpi: 180
+    dpi: 180;
     show-icons: true;
 }

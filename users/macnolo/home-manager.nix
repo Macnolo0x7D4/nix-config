@@ -130,4 +130,8 @@ in {
     size = 128;
     x11.enable = true;
   };
+
+  programs.rofi = {
+    theme = "purple";
+  };
 }
