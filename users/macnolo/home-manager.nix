@@ -1,4 +1,4 @@
-{ isWSL, inputs, ... }:
+{ inputs, ... }:
 
 { config, lib, pkgs, ... }:
 
@@ -37,11 +37,12 @@ in {
 
   home.packages = [
     pkgs.neovim
+    pkgs.emacs
     pkgs.elixir
     pkgs.nodejs
     pkgs.fastfetch
     pkgs.go
-  ] ++ (lib.optionals (isLinux && !isWSL) [
+  ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.rofi
     pkgs.dmenu
@@ -69,11 +70,20 @@ in {
 
   xdg.configFile = {
     "i3/config".text = builtins.readFile ./i3;
+
     "rofi/config.rasi".text = builtins.readFile ./rofi;
+
     "nvim" = {
       source = builtins.fetchGit {
         url = "https://github.com/Macnolo0x7D4/nvim.lua";
         rev = "53372bcda3235c1a611cb4b9939867e6cbbb4d45";
+      };
+    };
+
+    "emacs" = {
+      source = builtins.fetchGit {
+        url = "https://github.com/Macnolo0x7D4/emacs.d";
+        rev = "4748847c168cd115ba2efba3a263161cf6924b88";
       };
     };
   };
@@ -99,7 +109,7 @@ in {
   }; 
 
   programs.i3status = {
-    enable = isLinux && !isWSL;
+    enable = isLinux;
 
     general = {
       colors = true;
@@ -116,7 +126,7 @@ in {
   };
 
   programs.kitty = {
-    enable = !isWSL;
+    enable = true;
     extraConfig = builtins.readFile ./kitty;
   };
 
@@ -124,14 +134,10 @@ in {
     "Xft.dpi" = 180;
   };
 
-  home.pointerCursor = lib.mkIf (isLinux && !isWSL) {
+  home.pointerCursor = lib.mkIf isLinux {
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;
     size = 128;
     x11.enable = true;
-  };
-
-  programs.rofi = {
-    theme = "purple";
   };
 }

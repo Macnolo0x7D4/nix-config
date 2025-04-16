@@ -4,13 +4,11 @@ name:
 {
   system,
   user,
-  darwin ? false,
-  wsl ? false
+  darwin ? false
 }:
 
 let
-  isWSL = wsl;
-  isLinux = !darwin && !isWSL;
+  isLinux = !darwin;
 
   machineConfig = ../hosts/${name}.nix;
   userOSConfig = ../users/${user}/${if darwin then "darwin" else "nixos" }.nix;
@@ -24,8 +22,6 @@ in systemFunc rec {
   modules = [
     { nixpkgs.config.allowUnfree = true; }
 
-    #(if isWSL then inputs.nixos-wsl.nixosModules.wsl else {})
-
     #(if isLinux then inputs.nix-snapd.nixosModules.default else {})
 
     machineConfig
@@ -34,7 +30,6 @@ in systemFunc rec {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.${user} = import userHMConfig {
-        isWSL = isWSL;
         inputs = inputs;
       };
 
@@ -46,7 +41,6 @@ in systemFunc rec {
         currentSystem = system;
         currentSystemName = name;
         currentSystemUser = user;
-        isWSL = isWSL;
         inputs = inputs;
       };
     }
