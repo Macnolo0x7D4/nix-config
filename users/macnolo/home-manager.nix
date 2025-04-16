@@ -105,7 +105,12 @@ in {
       "wireless _first_".enable = false;
       "battery all".enable = false;
     };
-  }; 
+  };
+
+  programs.kitty = {
+    enable = !isWSL;
+    extraConfig = builtins.readFile ./kitty;
+  };
 
   xresources.properties = {
     "Xft.dpi" = 180;
