@@ -14,6 +14,10 @@
 
   system.stateVersion = "24.11";
 
+  boot.binfmt.emulatedSystems = ["x86_64-linux"];
+
+  nixpkgs.config.allowUnsupportedSystem = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
