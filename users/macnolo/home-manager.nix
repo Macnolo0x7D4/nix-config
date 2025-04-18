@@ -42,6 +42,8 @@ in {
     pkgs.nodejs
     pkgs.fastfetch
     pkgs.go
+    pkgs.ripgrep
+    pkgs.fd
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.rofi
@@ -54,7 +56,6 @@ in {
     pkgs.autoconf
     pkgs.automake
     pkgs.libtool
-    pkgs.ripgrep
   ]);
 
   home.sessionVariables = {
@@ -76,7 +77,7 @@ in {
     "nvim" = {
       source = builtins.fetchGit {
         url = "https://github.com/Macnolo0x7D4/nvim.lua";
-        rev = "53372bcda3235c1a611cb4b9939867e6cbbb4d45";
+        rev = "a1f4684bbbc6a0634e6c5742d4c2b1ec5f929ccf";
       };
     };
 
