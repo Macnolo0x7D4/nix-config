@@ -46,6 +46,7 @@ in {
     pkgs.fd
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
+    pkgs.postman
     pkgs.rofi
     pkgs.dmenu
     pkgs.kitty
