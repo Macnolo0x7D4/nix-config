@@ -4,17 +4,6 @@
   homebrew = {
     enable = true;
 
-    onActivation = {
-      autoUpdate = false;
-    };
-
-    taps = [
-      "homebrew/services"
-    ];
-
-    brews = [
-    ];
-
     casks = [
       "1password"
       "obsidian"
