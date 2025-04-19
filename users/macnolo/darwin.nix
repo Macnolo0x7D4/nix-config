@@ -16,8 +16,12 @@
     ];
 
     casks = [
-      "neovide"
+      "1password"
       "obsidian"
+      "google-chrome"
+      "discord"
+      "slack"
+      "spotify"
     ];
   };
 

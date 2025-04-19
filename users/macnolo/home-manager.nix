@@ -37,17 +37,17 @@ in {
 
   home.packages = [
     pkgs.neovim
-    pkgs.emacs
-    pkgs.elixir
-    pkgs.nodejs
     pkgs.fastfetch
-    pkgs.go
     pkgs.ripgrep
     pkgs.fd
+    pkgs.nodejs
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.postman
+    pkgs.emacs
     pkgs.rofi
+    pkgs.elixir
+    pkgs.go
     pkgs.dmenu
     pkgs.kitty
     pkgs.neovide
