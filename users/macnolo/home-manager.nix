@@ -57,6 +57,7 @@ in {
     pkgs.autoconf
     pkgs.automake
     pkgs.libtool
+    pkgs.inotify-tools
   ]);
 
   home.sessionVariables = {
