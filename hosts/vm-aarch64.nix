@@ -37,7 +37,7 @@
     xserver = {
       enable = true;
 
-      xkb.layout = "us";
+      xkb.layout = "latam";
 
       dpi = 180;
 
@@ -96,10 +96,4 @@
     end
     # End Nix
     ''; 
-
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "macnolo" ];
-  };
 }
