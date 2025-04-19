@@ -73,22 +73,7 @@ in {
 
   xdg.configFile = {
     "i3/config".text = builtins.readFile ./i3;
-
     "rofi/config.rasi".text = builtins.readFile ./rofi;
-
-    "nvim" = {
-      source = builtins.fetchGit {
-        url = "https://github.com/Macnolo0x7D4/nvim.lua";
-        rev = "a1f4684bbbc6a0634e6c5742d4c2b1ec5f929ccf";
-      };
-    };
-
-    "emacs" = {
-      source = builtins.fetchGit {
-        url = "https://github.com/Macnolo0x7D4/emacs.d";
-        rev = "4748847c168cd115ba2efba3a263161cf6924b88";
-      };
-    };
   };
 
   programs.gpg.enable = !isDarwin;
