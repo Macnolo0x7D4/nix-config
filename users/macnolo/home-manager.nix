@@ -58,6 +58,14 @@ in {
     pkgs.automake
     pkgs.libtool
     pkgs.inotify-tools
+    pkgs.eza
+    pkgs.fzf
+    pkgs.jq
+    pkgs.awscli2
+    pkgs.bat
+    pkgs.terraform
+    pkgs.python3
+    pkgs.zulu
   ]);
 
   home.sessionVariables = {
