@@ -62,6 +62,8 @@ in {
     pkgs.terraform
     pkgs.python3
     pkgs.zulu
+    pkgs.kubectl
+    pkgs.dbeaver-bin
   ]);
 
   home.sessionVariables = {
