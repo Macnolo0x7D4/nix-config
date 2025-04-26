@@ -37,6 +37,8 @@ in {
     pkgs.ripgrep
     pkgs.fd
     pkgs.nodejs
+    pkgs._1password-gui
+    pkgs._1password-cli
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.postman
