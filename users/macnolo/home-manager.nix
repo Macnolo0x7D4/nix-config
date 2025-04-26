@@ -36,12 +36,12 @@ in {
     pkgs.fastfetch
     pkgs.ripgrep
     pkgs.fd
-    pkgs.nodejs
-    pkgs._1password-gui
-    pkgs._1password-cli
+    pkgs.nodejs 
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.postman
+    pkgs._1password-gui
+    pkgs._1password-cli
     pkgs.emacs
     pkgs.rofi
     pkgs.elixir
