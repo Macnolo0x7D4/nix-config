@@ -11,6 +11,8 @@
     packages = with pkgs; [
       tree
       git
+      polkit
+      polkit_gnome
     ];
   };
 

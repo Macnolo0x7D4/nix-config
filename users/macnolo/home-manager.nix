@@ -40,8 +40,6 @@ in {
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.postman
-    pkgs._1password-gui
-    pkgs._1password-cli
     pkgs.emacs
     pkgs.rofi
     pkgs.elixir
@@ -66,6 +64,7 @@ in {
     pkgs.zulu
     pkgs.kubectl
     pkgs.dbeaver-bin
+    pkgs._1password-cli
   ]);
 
   home.sessionVariables = {
