@@ -125,6 +125,20 @@ in {
     extraConfig = builtins.readFile ./kitty;
   };
 
+  programs.tmux = {
+    enable = true;
+
+    mouse = true;
+    keyMode = "vi";
+
+    plugins = with pkgs; [
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = "set -g @catppuccin_flavor 'mocha'";
+      }
+    ];
+  };
+
   xresources.properties = {
     "Xft.dpi" = 180;
   };
