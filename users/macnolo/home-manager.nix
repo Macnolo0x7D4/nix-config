@@ -89,6 +89,7 @@ in {
 
   programs.fish = {
     enable = true;
+
     shellAliases = shellAliases;
     interactiveShellInit = "starship init fish | source";
   };
@@ -131,12 +132,38 @@ in {
     mouse = true;
     keyMode = "vi";
 
+    baseIndex = 1;
+
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = "set -g @catppuccin_flavor 'mocha'";
       }
     ];
+
+    extraConfig = ''
+      set-window-option -g pane-base-index 1
+      set-option -g renumber-windows on
+
+      unbind C-b
+      set -g prefix C-Space
+      bind C-Space send-prefix
+
+      bind h select-pane -L
+      bind j select-pane -D 
+      bind k select-pane -U
+      bind l select-pane -R
+
+      bind -n M-Left select-pane -L
+      bind -n M-Right select-pane -R
+      bind -n M-Up select-pane -U
+      bind -n M-Down select-pane -D
+
+      bind -n M-h select-pane -L
+      bind -n M-j select-pane -R
+      bind -n M-k select-pane -U
+      bind -n M-l select-pane -D
+    '';
   };
 
   xresources.properties = {
