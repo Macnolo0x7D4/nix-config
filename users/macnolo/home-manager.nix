@@ -65,6 +65,7 @@ in {
     pkgs.kubectl
     pkgs.dbeaver-bin
     pkgs._1password-cli
+    pkgs.pnpm
   ]);
 
   home.sessionVariables = {
