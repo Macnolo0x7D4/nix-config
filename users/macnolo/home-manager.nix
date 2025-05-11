@@ -20,12 +20,6 @@ let
     pbcopy = "xclip";
     pbpaste = "xclip -o";
   } else {});
-
-  manpager = (pkgs.writeShellScriptBin "manpager" (if isDarwin then ''
-    sh -c 'col -bx | bat -l man -p'
-    '' else ''
-    cat "$1" | col -bx | bat --language man --style plain
-  ''));
 in {
   home.stateVersion = "18.09";
 
@@ -74,7 +68,8 @@ in {
     LC_ALL = "en_US.UTF-8";
     EDITOR = "vim";
     PAGER = "less -FirSwX";
-    MANPAGER = "${manpager}/bin/manpager";
+    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+    MANROFFOPT = "-c";
   } // (if isDarwin then {
     DISPLAY = "nixpkgs-390751";
   } else {}); 

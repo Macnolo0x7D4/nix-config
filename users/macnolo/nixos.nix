@@ -16,6 +16,12 @@
     ];
   };
 
+  documentation = {
+    dev.enable = true;
+    man.generateCaches = true;
+    nixos.includeAllModules = true;
+  };
+
   programs.zsh.enable = true;
   programs.fish.enable = true;
 }
