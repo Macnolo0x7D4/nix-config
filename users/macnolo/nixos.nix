@@ -24,4 +24,5 @@
 
   programs.zsh.enable = true;
   programs.fish.enable = true;
+  programs.ssh.enableAskPassword = false;
 }
