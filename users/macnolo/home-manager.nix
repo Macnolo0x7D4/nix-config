@@ -40,7 +40,6 @@ in {
     pkgs.go
     pkgs.dmenu
     pkgs.kitty
-    pkgs.neovide
     pkgs.gcc
     pkgs.gnumake
     pkgs.pkg-config
@@ -58,8 +57,8 @@ in {
     pkgs.zulu
     pkgs.kubectl
     pkgs.dbeaver-bin
-    pkgs._1password-cli
     pkgs.pnpm
+    pkgs.asdf-vm
   ]);
 
   home.sessionVariables = {
@@ -70,6 +69,7 @@ in {
     PAGER = "less -FirSwX";
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     MANROFFOPT = "-c";
+    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   } // (if isDarwin then {
     DISPLAY = "nixpkgs-390751";
   } else {}); 
