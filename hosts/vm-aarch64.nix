@@ -23,6 +23,10 @@
 
   networking.hostName = "vm";
 
+  networking.hosts = {
+    "127.0.0.1" = [ "vm.local" ];
+  };
+
   time.timeZone = "America/Mexico_City";
 
   virtualisation.vmware.guest.enable = true;
