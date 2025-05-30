@@ -2,7 +2,7 @@
 
   imports =
     [
-      ./hardware/vm-aarch64.nix
+      ./hardware/ideapad.nix
     ];
 
   nix = {
@@ -14,19 +14,21 @@
 
   system.stateVersion = "25.05";
 
-  boot.binfmt.emulatedSystems = ["x86_64-linux"];
-
-  nixpkgs.config.allowUnsupportedSystem = true;
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "vm";
+  networking.hostName = "ideapad";
+
+  networking.networkmanager.enable = true;
+
+  networking.nameservers = [
+    "1.1.1.1"
+    "1.0.0.1"
+    "8.8.8.8"
+    "8.8.4.4"
+  ];
 
   time.timeZone = "America/Mexico_City";
-
-  virtualisation.vmware.guest.enable = true;
-  virtualisation.vmware.guest.headless = false;
 
   security.sudo.wheelNeedsPassword = false;
   virtualisation.docker.enable = true;
@@ -39,8 +41,6 @@
 
       xkb.layout = "latam";
 
-      dpi = 180;
-
       desktopManager = {
         xterm.enable = false;
       };
@@ -52,18 +52,10 @@
           i3status
           i3lock
           i3blocks
+          xsel
           xclip
+          brightnessctl
         ];
-      };
-    };
-
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      publish = {
-        enable = true;
-        domain = true;
-        addresses = true;
       };
     };
   };
@@ -79,21 +71,6 @@
     groff
     less
   ];  
-
-  fileSystems."/host" = {
-    fsType = "fuse./run/current-system/sw/bin/vmhgfs-fuse";
-    device = ".host:/";
-    options = [
-      "umask=22"
-      "uid=1000"
-      "gid=1000"
-      "allow_other"
-      "auto_unmount"
-      "defaults"
-    ];
-  };
-
-  networking.firewall.enable = false;
   
   programs.fish.enable = true;
 }
