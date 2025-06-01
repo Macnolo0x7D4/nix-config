@@ -78,6 +78,7 @@ in {
   xdg.configFile = {
     "i3/config".text = builtins.readFile ./i3;
     "rofi/config.rasi".text = builtins.readFile ./rofi;
+    "ghostty/config".text = builtins.readFile ./ghostty;
   };
 
   programs.gpg.enable = !isDarwin;
@@ -126,6 +127,11 @@ in {
   programs.kitty = {
     enable = true;
     extraConfig = builtins.readFile ./kitty;
+  };
+
+
+  programs.ghostty = {
+    enable = true;
   };
 
   programs.tmux = {
