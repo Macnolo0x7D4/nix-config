@@ -33,7 +33,7 @@ in {
     pkgs.nodejs 
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
-    pkgs.postman
+    pkgs.bruno
     pkgs.emacs
     pkgs.rofi
     pkgs.elixir
