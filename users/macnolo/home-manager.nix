@@ -85,9 +85,14 @@ in {
 
   programs.fish = {
     enable = true;
-
     shellAliases = shellAliases;
     interactiveShellInit = "starship init fish | source";
+  };
+
+  programs.nushell = {
+    enable = true;
+    configFile.source = ./config.nu;
+    shellAliases = shellAliases;
   };
 
   programs.git = {
