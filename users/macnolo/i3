@@ -2,6 +2,8 @@ set $mod Mod4
 
 font pango:BerkeleyMono Nerd Font 10
 
+exec --no-startup-id xsetroot -solid "#000000"
+
 set $refresh_i3status killall -SIGUSR1 i3status
 
 floating_modifier $mod
