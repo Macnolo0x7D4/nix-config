@@ -31,6 +31,7 @@ in {
     pkgs.ripgrep
     pkgs.fd
     pkgs.nodejs 
+    pkgs.jujutsu
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.bruno
