@@ -171,6 +171,8 @@ in {
       bind -n M-j select-pane -R
       bind -n M-k select-pane -U
       bind -n M-l select-pane -D
+      
+      set-option -g default-shell ${pkgs.nushell}/bin/nu
     '';
   };
 

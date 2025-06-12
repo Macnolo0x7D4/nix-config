@@ -7,8 +7,6 @@ theme = catppuccin-mocha
 
 window-decoration = server
 
-scrollback-limit = 0
-
 background-opacity = 1.00
 background-blur-radius = 20
 
