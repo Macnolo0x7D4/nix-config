@@ -51,15 +51,20 @@ in {
     pkgs.eza
     pkgs.fzf
     pkgs.jq
+    pkgs.kubectl
+    pkgs.kubernetes-helm
+    pkgs.kubeseal
     pkgs.awscli2
     pkgs.bat
     pkgs.terraform
     pkgs.python3
     pkgs.zulu
-    pkgs.kubectl
     pkgs.dbeaver-bin
     pkgs.pnpm
     pkgs.asdf-vm
+    pkgs.claude-code
+    pkgs.codex
+    pkgs.leiningen
   ]);
 
   home.sessionVariables = {
