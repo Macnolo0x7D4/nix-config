@@ -35,7 +35,6 @@ in {
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.bruno
-    pkgs.emacs
     pkgs.rofi
     pkgs.elixir
     pkgs.go
@@ -134,51 +133,35 @@ in {
     extraConfig = builtins.readFile ./kitty;
   };
 
-
   programs.ghostty = {
     enable = true;
   };
 
+  programs.emacs = {
+     enable = true;
+     package = pkgs.emacs-gtk;
+  };
+
   programs.tmux = {
     enable = true;
-
-    mouse = true;
-    keyMode = "vi";
-
     baseIndex = 1;
+
+    keyMode = "vi";
 
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;
-        extraConfig = "set -g @catppuccin_flavor 'mocha'";
+        extraConfig = ''
+          set -g @catppuccin_flavor 'mocha'
+          set -g @catppuccin_window_status_style "rounded"
+        '';
       }
     ];
 
-    extraConfig = ''
-      set-window-option -g pane-base-index 1
-      set-option -g renumber-windows on
-
-      unbind C-b
-      set -g prefix C-Space
-      bind C-Space send-prefix
-
-      bind h select-pane -L
-      bind j select-pane -D 
-      bind k select-pane -U
-      bind l select-pane -R
-
-      bind -n M-Left select-pane -L
-      bind -n M-Right select-pane -R
-      bind -n M-Up select-pane -U
-      bind -n M-Down select-pane -D
-
-      bind -n M-h select-pane -L
-      bind -n M-j select-pane -R
-      bind -n M-k select-pane -U
-      bind -n M-l select-pane -D
-      
-      set-option -g default-shell ${pkgs.nushell}/bin/nu
-    '';
+    extraConfig = lib.concatStrings([
+      (builtins.readFile ./tmux.conf)
+      "set-option -g default-shell ${pkgs.nushell}/bin/nu"
+    ]);
   };
 
   xresources.properties = {
