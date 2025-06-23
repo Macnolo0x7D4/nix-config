@@ -37,6 +37,9 @@ in {
     pkgs.bruno
     pkgs.rofi
     pkgs.elixir
+    pkgs.elixir-ls
+    pkgs.clojure
+    pkgs.clojure-lsp
     pkgs.go
     pkgs.dmenu
     pkgs.kitty
