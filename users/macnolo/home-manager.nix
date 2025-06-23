@@ -60,7 +60,6 @@ in {
     pkgs.zulu
     pkgs.dbeaver-bin
     pkgs.pnpm
-    pkgs.asdf-vm
     pkgs.claude-code
     pkgs.codex
     pkgs.leiningen
