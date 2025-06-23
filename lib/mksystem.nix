@@ -1,4 +1,4 @@
-{ nixpkgs, inputs }:
+{ overlays, nixpkgs, inputs }:
 
 name:
 {
@@ -20,9 +20,8 @@ in systemFunc rec {
   inherit system;
 
   modules = [
+    { nixpkgs.overlays = overlays; }
     { nixpkgs.config.allowUnfree = true; }
-
-    #(if isLinux then inputs.nix-snapd.nixosModules.default else {})
 
     machineConfig
     userOSConfig

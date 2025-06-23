@@ -23,8 +23,15 @@
     nix-darwin,
     ...
   }: let
+    overlays = [
+      (final: prev: rec {
+        gh = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.gh;
+        nushell = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.nushell;
+      })
+    ];
+
     mkSystem = import ./lib/mksystem.nix {
-      inherit nixpkgs inputs;
+      inherit overlays nixpkgs inputs;
     };
   in {
     nixosConfigurations."vm" = mkSystem "vm-aarch64" {
