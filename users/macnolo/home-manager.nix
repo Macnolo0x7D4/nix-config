@@ -16,12 +16,9 @@ let
     gp = "git push";
     gs = "git status";
     gt = "git tag";
-  } // (if isLinux then {
-    pbcopy = "xclip";
-    pbpaste = "xclip -o";
-  } else {});
+  };
 in {
-  home.stateVersion = "18.09";
+  home.stateVersion = "25.05";
 
   xdg.enable = true;
 
