@@ -63,6 +63,7 @@ in {
     pkgs.claude-code
     pkgs.codex
     pkgs.leiningen
+    pkgs.jdt-language-server
   ]);
 
   home.sessionVariables = {
