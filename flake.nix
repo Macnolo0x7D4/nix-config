@@ -24,9 +24,15 @@
     ...
   }: let
     overlays = [
-      (final: prev: rec {
-        gh = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.gh;
-        nushell = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.nushell;
+      (final: prev: let
+        pkgs-unstable = import inputs.nixpkgs-unstable {
+          system = prev.system;
+          config.allowUnfree = true;
+        };
+      in {
+        gh = pkgs-unstable.gh;
+        claude-code = pkgs-unstable.claude-code;
+        nushell = pkgs-unstable.nushell;
       })
     ];
 
