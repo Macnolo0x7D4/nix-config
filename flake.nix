@@ -24,9 +24,9 @@
     ...
   }: let
     overlays = [
-      (final: prev: let
+      (final: _prev: let
         pkgs-unstable = import inputs.nixpkgs-unstable {
-          system = prev.system;
+          system = final.system;
           config.allowUnfree = true;
         };
       in {
