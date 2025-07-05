@@ -5,18 +5,6 @@
 let
   isDarwin = pkgs.stdenv.isDarwin;
   isLinux = pkgs.stdenv.isLinux;
-
-  shellAliases = {
-    ga = "git add";
-    gc = "git commit";
-    gco = "git checkout";
-    gcp = "git cherry-pick";
-    gdiff = "git diff";
-    gl = "git prettylog";
-    gp = "git push";
-    gs = "git status";
-    gt = "git tag";
-  };
 in {
   home.stateVersion = "25.05";
 
@@ -91,14 +79,12 @@ in {
 
   programs.fish = {
     enable = true;
-    shellAliases = shellAliases;
     interactiveShellInit = "starship init fish | source";
   };
 
   programs.nushell = {
     enable = true;
     configFile.source = ./config.nu;
-    shellAliases = shellAliases;
   };
 
   programs.git = {
