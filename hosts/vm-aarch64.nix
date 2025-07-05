@@ -56,7 +56,7 @@
           i3status
           i3lock
           i3blocks
-          xclip
+          xsel
         ];
       };
     };
