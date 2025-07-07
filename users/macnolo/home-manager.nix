@@ -52,6 +52,7 @@ in {
     pkgs.codex
     pkgs.leiningen
     pkgs.jdt-language-server
+    pkgs.postman
   ]);
 
   home.sessionVariables = {
