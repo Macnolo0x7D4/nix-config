@@ -15,7 +15,7 @@ in {
     pkgs.fastfetch
     pkgs.ripgrep
     pkgs.fd
-    pkgs.nodejs 
+    pkgs.nodejs
     pkgs.jujutsu
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
@@ -54,6 +54,9 @@ in {
     pkgs.jdt-language-server
     pkgs.postman
     pkgs.watchman
+    pkgs.lazygit
+    pkgs.lua
+    pkgs.luarocks
   ]);
 
   home.sessionVariables = {
@@ -67,7 +70,7 @@ in {
     LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   } // (if isDarwin then {
     DISPLAY = "nixpkgs-390751";
-  } else {}); 
+  } else {});
 
   xdg.configFile = {
     "i3/config".text = builtins.readFile ./i3;
@@ -92,12 +95,12 @@ in {
   programs.git = {
     enable = true;
     userName = "Manuel Díaz";
-    userEmail = "yosoymacnolo@gmail.com"; 
+    userEmail = "yosoymacnolo@gmail.com";
     extraConfig = {
       github.user = "Macnolo0x7D4";
       init.defaultBranch = "main";
     };
-  }; 
+  };
 
   programs.i3status = {
     enable = isLinux;
