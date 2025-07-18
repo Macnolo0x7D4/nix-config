@@ -20,6 +20,7 @@ in {
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.bruno
+    pkgs.bruno-cli
     pkgs.rofi
     pkgs.elixir
     pkgs.elixir-ls
