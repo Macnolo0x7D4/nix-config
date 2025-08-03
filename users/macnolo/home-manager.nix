@@ -17,26 +17,9 @@ in {
     pkgs.fd
     pkgs.nodejs
     pkgs.jujutsu
-  ] ++ (lib.optionals isLinux [
-    pkgs.chromium
-    pkgs.bruno
-    pkgs.bruno-cli
-    pkgs.rofi
     pkgs.elixir
-    pkgs.elixir-ls
     pkgs.clojure
-    pkgs.clojure-lsp
     pkgs.go
-    pkgs.dmenu
-    pkgs.kitty
-    pkgs.gcc
-    pkgs.gnumake
-    pkgs.pkg-config
-    pkgs.autoconf
-    pkgs.automake
-    pkgs.libtool
-    pkgs.inotify-tools
-    pkgs.eza
     pkgs.fzf
     pkgs.jq
     pkgs.kubectl
@@ -47,17 +30,30 @@ in {
     pkgs.terraform
     pkgs.python3
     pkgs.zulu
-    pkgs.dbeaver-bin
     pkgs.pnpm
     pkgs.claude-code
     pkgs.codex
     pkgs.leiningen
-    pkgs.jdt-language-server
-    pkgs.postman
     pkgs.watchman
     pkgs.lazygit
     pkgs.lua
     pkgs.luarocks
+  ] ++ (lib.optionals isLinux [
+    pkgs.chromium
+    pkgs.bruno
+    pkgs.rofi
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.pkg-config
+    pkgs.autoconf
+    pkgs.automake
+    pkgs.libtool
+    pkgs.inotify-tools
+    pkgs.dbeaver-bin
+    pkgs.postman
+    pkgs.elixir-ls
+    pkgs.clojure-lsp
+    pkgs.jdt-language-server
   ]);
 
   home.sessionVariables = {
