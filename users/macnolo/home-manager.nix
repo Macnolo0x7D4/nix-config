@@ -156,6 +156,11 @@ in {
     ]);
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
   xresources.properties = {
     "Xft.dpi" = 180;
   };
