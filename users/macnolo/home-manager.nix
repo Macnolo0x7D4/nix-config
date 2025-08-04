@@ -38,6 +38,10 @@ in {
     pkgs.lazygit
     pkgs.lua
     pkgs.luarocks
+    pkgs.elixir-ls
+    pkgs.clojure-lsp
+    pkgs.jdt-language-server
+    pkgs.asdf
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.bruno
@@ -51,9 +55,6 @@ in {
     pkgs.inotify-tools
     pkgs.dbeaver-bin
     pkgs.postman
-    pkgs.elixir-ls
-    pkgs.clojure-lsp
-    pkgs.jdt-language-server
   ]);
 
   home.sessionVariables = {
@@ -117,12 +118,12 @@ in {
   };
 
   programs.kitty = {
-    enable = true;
+    enable = isLinux;
     extraConfig = builtins.readFile ./kitty;
   };
 
   programs.ghostty = {
-    enable = true;
+    enable = isLinux;
   };
 
   programs.emacs = {
@@ -157,7 +158,7 @@ in {
     enableNushellIntegration = true;
   };
 
-  xresources.properties = {
+  xresources.properties = lib.mkIf isLinux {
     "Xft.dpi" = 180;
   };
 
