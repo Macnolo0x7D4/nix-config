@@ -1,6 +1,12 @@
 { inputs, pkgs, ... }:
 
 {
+  users.users.macnolo = {
+    home = "/Users/macnolo";
+  };
+
+  system.primaryUser = "macnolo";
+
   homebrew = {
     enable = true;
 
@@ -13,9 +19,5 @@
       "slack"
       "spotify"
     ];
-  };
-
-  users.users.macnolo = {
-    home = "/Users/macnolo";
   };
 }
