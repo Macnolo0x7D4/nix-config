@@ -41,7 +41,6 @@ in {
     pkgs.elixir-ls
     pkgs.clojure-lsp
     pkgs.jdt-language-server
-    pkgs.asdf
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.bruno
