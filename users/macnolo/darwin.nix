@@ -10,6 +10,10 @@
   homebrew = {
     enable = true;
 
+    brews = [
+      "asdf"
+    ];
+
     casks = [
       "1password"
       "1password-cli"
