@@ -42,6 +42,8 @@ in {
     pkgs.clojure-lsp
     pkgs.jdt-language-server
     pkgs.uv
+    pkgs.google-cloud-sdk
+    pkgs.gh
   ] ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.bruno
@@ -93,7 +95,7 @@ in {
   programs.git = {
     enable = true;
     userName = "Manuel Díaz";
-    userEmail = "yosoymacnolo@gmail.com";
+    userEmail = "diaz@macnolo.net";
     extraConfig = {
       github.user = "Macnolo0x7D4";
       init.defaultBranch = "main";
