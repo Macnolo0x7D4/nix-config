@@ -99,11 +99,15 @@ in {
 
   programs.git = {
     enable = true;
-    userName = "Manuel Díaz";
-    userEmail = "diaz@macnolo.net";
-    extraConfig = {
+
+    settings = {
       github.user = "Macnolo0x7D4";
       init.defaultBranch = "main";
+
+      user = {
+        name = "Manuel Díaz";
+        email = "diaz@macnolo.net";
+      };
     };
   };
 
