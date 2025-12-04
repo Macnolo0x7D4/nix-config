@@ -28,7 +28,6 @@ in {
     pkgs.awscli2
     pkgs.bat
     pkgs.terraform
-    pkgs.python3
     pkgs.zulu
     pkgs.pnpm
     pkgs.claude-code
@@ -44,7 +43,13 @@ in {
     pkgs.uv
     pkgs.google-cloud-sdk
     pkgs.gh
+    pkgs.bun
+    pkgs.meson
+    pkgs.ninja
+    pkgs.cmake
+    pkgs.bazel
   ] ++ (lib.optionals isLinux [
+    pkgs.python3
     pkgs.chromium
     pkgs.bruno
     pkgs.rofi
