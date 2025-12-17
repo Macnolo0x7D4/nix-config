@@ -47,7 +47,7 @@ in {
     pkgs.meson
     pkgs.ninja
     pkgs.cmake
-    pkgs.bazel
+    pkgs.bazel_8
   ] ++ (lib.optionals isLinux [
     pkgs.python3
     pkgs.chromium
