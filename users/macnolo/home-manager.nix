@@ -48,6 +48,7 @@ in {
     pkgs.ninja
     pkgs.cmake
     pkgs.bazel_8
+    pkgs.gemini-cli
   ] ++ (lib.optionals isLinux [
     pkgs.python3
     pkgs.chromium
