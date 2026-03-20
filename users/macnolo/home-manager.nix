@@ -49,6 +49,9 @@ in {
     pkgs.cmake
     pkgs.bazel_8
     pkgs.gemini-cli
+    pkgs.opencode
+    pkgs.dos2unix
+    pkgs.qmk
   ] ++ (lib.optionals isLinux [
     pkgs.python3
     pkgs.chromium
