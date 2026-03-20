@@ -23,6 +23,7 @@ in systemFunc rec {
     { nixpkgs.overlays = overlays; }
     { nixpkgs.config.allowUnfree = true; }
 
+    ../modules/nix-core.nix
     machineConfig
     userOSConfig
     home-manager.home-manager {
