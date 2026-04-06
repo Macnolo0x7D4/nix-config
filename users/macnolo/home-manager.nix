@@ -53,6 +53,7 @@ in {
     pkgs.dos2unix
     pkgs.qmk
     pkgs.hledger
+    pkgs.qemu
   ] ++ (lib.optionals isLinux [
     pkgs.python3
     pkgs.chromium
