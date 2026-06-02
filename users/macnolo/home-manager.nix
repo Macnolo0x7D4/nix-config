@@ -68,6 +68,8 @@ in {
     pkgs.inotify-tools
     pkgs.dbeaver-bin
     pkgs.postman
+  ]) ++ (lib.optionals isDarwin [
+    pkgs.aerospace
   ]);
 
   home.sessionVariables = {
