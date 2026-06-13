@@ -54,6 +54,7 @@ in {
     pkgs.qmk
     pkgs.hledger
     pkgs.qemu
+    pkgs.tree-sitter
   ] ++ (lib.optionals isLinux [
     pkgs.python3
     pkgs.chromium
