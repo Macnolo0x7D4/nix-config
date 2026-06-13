@@ -15,6 +15,7 @@
     ];
 
     casks = [
+      "orbstack"
       "brave-browser"
       "ghostty"
       "obsidian"
@@ -28,7 +29,6 @@
   };
 
   security.pam.services.sudo_local.touchIdAuth = true;
-
 
   system.defaults.NSGlobalDomain.InitialKeyRepeat = 25;
   system.defaults.NSGlobalDomain.KeyRepeat = 2;
