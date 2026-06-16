@@ -3,6 +3,8 @@ command = zsh -l -c nu
 font-size = 14
 font-family = Berkeley Mono
 font-feature = +liga, +calt, +dlig
+font-thicken = true
+font-thicken-strength = 192
 
 theme = Kanagawa Wave
 
