@@ -15,6 +15,7 @@
     ];
 
     casks = [
+      "bruno"
       "orbstack"
       "brave-browser"
       "ghostty"
