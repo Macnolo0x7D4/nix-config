@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  system = {
+  stdenv.hostPlatform.system = {
     stateVersion = 5;
     activationScripts.postUserActivation.text = ''
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u

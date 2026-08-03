@@ -34,7 +34,6 @@
         claude-code = pkgs-unstable.claude-code;
         nushell = pkgs-unstable.nushell;
         opencode = pkgs-unstable.opencode;
-        fish = pkgs-unstable.fish;
       })
     ];
 
