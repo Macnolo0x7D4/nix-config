@@ -55,6 +55,7 @@ in {
     pkgs.hledger
     pkgs.qemu
     pkgs.tree-sitter
+    pkgs.markitdown-mcp
   ] ++ (lib.optionals isLinux [
     pkgs.python3
     pkgs.chromium
@@ -69,8 +70,6 @@ in {
     pkgs.inotify-tools
     pkgs.dbeaver-bin
     pkgs.postman
-  ]) ++ (lib.optionals isDarwin [
-    pkgs.aerospace
   ]);
 
   home.sessionVariables = {
