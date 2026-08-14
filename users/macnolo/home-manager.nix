@@ -33,7 +33,6 @@ in {
     pkgs.claude-code
     pkgs.codex
     pkgs.leiningen
-    pkgs.watchman
     pkgs.lazygit
     pkgs.lua
     pkgs.luarocks
@@ -55,7 +54,6 @@ in {
     pkgs.hledger
     pkgs.qemu
     pkgs.tree-sitter
-    pkgs.markitdown-mcp
   ] ++ (lib.optionals isLinux [
     pkgs.python3
     pkgs.chromium
