@@ -26,6 +26,7 @@
       "spotify"
       "nordpass"
       "alfred"
+      "tailscale-app"
     ];
   };
 
